@@ -1,0 +1,27 @@
+.dashboard-card {
+	> .title {
+		@apply py-2;
+	}
+	> .body {
+		@apply flex-1 bg-white rounded-md p-4;
+	}
+	@apply flex flex-col;
+}
+
+.reference-card {
+	> .image {
+		@apply h-12 w-12 object-cover rounded-full;
+	}
+	.active {
+		color: var(--success-color);
+	}
+	.description {
+		display: -webkit-box;
+		overflow: hidden;
+		-webkit-line-clamp: 1;
+		-webkit-box-orient: vertical;
+	}
+}
+.modal-card {
+	@apply bg-white p-7 rounded-lg shadow-sm flex-1;
+}
