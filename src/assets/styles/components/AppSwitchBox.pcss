@@ -1,0 +1,81 @@
+.app-switchbox-wrapper {
+	height: 100%;
+	text-align: center;
+	display: flex;
+	align-items: center;
+
+	.hidden {
+		display: none;
+	}
+	.checkbox {
+		& + .switchbox {
+			@apply bg-gray-100;
+			border-radius: 20px;
+			cursor: pointer;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			height: 30px;
+			overflow: hidden;
+			position: relative;
+			width: 65px;
+			.circle {
+				background-color: #fff;
+				border-radius: 20px;
+				content: ' ';
+				display: block;
+				padding: 12px;
+				position: absolute;
+				right: 58%;
+				transition: all 0.25s linear;
+				z-index: 10;
+			}
+			.background {
+				background-color: #2ecc71;
+				height: 100%;
+				width: 100%;
+				padding: 35px;
+				border-radius: 50%;
+				transition: 1s;
+				transform: translate(-100%, 0);
+			}
+			.text {
+				display: flex;
+				justify-content: space-around;
+				width: 100%;
+				position: absolute;
+				font-size: 10px;
+			}
+			.on {
+				font-size: 10px;
+			}
+			.off {
+				font-size: 10px;
+			}
+		}
+		&:checked {
+			& + .switchbox {
+				.background {
+					transform: translate(0);
+				}
+				.circle {
+					right: 5%;
+				}
+				.text {
+					.off {
+						visibility: hidden;
+					}
+				}
+			}
+		}
+		&:not(:checked) {
+			& + .switchbox {
+				.text {
+					.on {
+						visibility: hidden;
+					}
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,32 @@
+.app-tabs-container {
+	border-bottom: 1px solid #18181810;
+	display: flex;
+	flex-wrap: nowrap;
+	overflow-x: auto;
+	white-space: nowrap;
+
+	&.edit {
+		justify-content: space-between;
+		align-items: center;
+	}
+
+	.tab {
+		font-weight: 600;
+		line-height: 20px;
+		font-size: 15px;
+		padding: 10px 0;
+		border-bottom: 2px solid #fff;
+		margin-right: 40px;
+		cursor: pointer;
+		transition: all 0.2s;
+		color: #181818;
+		user-select: none;
+		&.active {
+			color: #181818;
+			@apply border-b-2 border-primary;
+		}
+		&.edit {
+			margin-right: 0;
+		}
+	}
+}

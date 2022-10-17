@@ -1,0 +1,183 @@
+.app-select {
+	user-select: none;
+	min-width: 200px;
+	&.pageNumber {
+		min-width: 80px;
+	}
+	&.non-overflowed {
+		position: relative;
+	}
+	&.label-black {
+		label {
+			color: black;
+		}
+	}
+	&.rounded {
+		.input {
+			border-radius: 30px;
+		}
+	}
+	.input {
+		cursor: pointer;
+		display: flex;
+		align-items: center;
+		.checked-items {
+			white-space: nowrap;
+			text-overflow: ellipsis;
+			overflow: hidden;
+		}
+		&:focus {
+			border: 1px solid rgba(green, 0.5);
+			outline: none;
+		}
+	}
+	&.open {
+		.input {
+			border: 1px solid var(--primary-color);
+		}
+	}
+	.checked-items {
+		width: 100%;
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+
+		.selected-text {
+			font-size: 14px;
+		}
+
+		.select-placeholder {
+			font-size: 12px;
+		}
+
+		.direct {
+			transition: transform 0.3s ease-in-out;
+
+			&.select-hide {
+				transform: rotate(-180deg);
+			}
+		}
+	}
+	.item {
+		cursor: pointer;
+		display: inline-block;
+		margin: 0.2rem;
+		background-color: rgba(118, 91, 223, 0.1);
+		color: rgba(0, 0, 0, 1);
+		@apply bg-background;
+		border-radius: 8px;
+		padding: 2.5px 10px;
+		font-weight: 500;
+	}
+	&.white {
+		.dropdown {
+			background-color: #fff;
+		}
+	}
+	&.disabled {
+		.input {
+			cursor: not-allowed;
+		}
+	}
+	&.no-validation {
+		.dropdown {
+			transform: unset !important;
+		}
+		.error-message {
+			display: none !important;
+		}
+	}
+	.dropdown {
+		/*statically*/
+		width: 100%;
+		z-index: 2;
+		border-radius: 4px;
+		animation-duration: 0.3s;
+		overflow-y: scroll;
+		max-height: 200px;
+		background-color: #fff;
+		box-sizing: border-box;
+		position: absolute;
+		display: inline-block;
+
+		@apply shadow-xl;
+		padding: 6px;
+		&.select-hide {
+			display: none;
+		}
+		.dropdown-item {
+			margin: 2px 0;
+			border-radius: 4px;
+			cursor: pointer;
+			padding: 0.5rem 1rem;
+			font-weight: 500;
+			transition: all ease-in-out 0.3s;
+			&.clickable {
+				pointer-events: none;
+				cursor: not-allowed;
+			}
+			&:hover {
+				@apply bg-primary bg-opacity-10;
+			}
+			&.active {
+				@apply bg-primary bg-opacity-10;
+			}
+		}
+		&::-webkit-scrollbar-thumb {
+			&:hover {
+				background-color: rgba(#777, 0.8) !important;
+			}
+			cursor: pointer !important;
+			/* background-color: rgba($primary-color, 0.7); */
+			border-radius: 5px;
+		}
+		&::-webkit-scrollbar {
+			width: 0.3rem;
+			height: 0.3rem;
+			/* background-color: $light-primary-color; */
+			cursor: pointer !important;
+		}
+	}
+	&.multiple {
+		/* border-radius: $border-radius-large; */
+		.direct {
+			font-size: 1.5rem;
+			/* color: rgba($primary-color, 0.8); */
+			position: absolute;
+			left: 97%;
+			bottom: 0.1rem;
+			transition: transform 0.3s ease-in;
+			transform: rotate(90deg);
+			&.selectHide {
+				transform: rotate(-90deg);
+			}
+		}
+	}
+}
+
+.app-select.multiple {
+	width: 100%;
+	box-sizing: border-box;
+	position: relative;
+	user-select: none;
+	.selected {
+		/* border: 1px solid rgba($primary-color, 0.3); */
+		padding: 5.6px;
+		border-radius: 4px;
+		.selected-list {
+			padding: 2.5px;
+			/* background-color: rgba($primary-color, 0.8); */
+			color: white;
+			display: inline;
+			margin: 0px 5px;
+			cursor: pointer;
+			/* border: 1px solid rgba($primary-color, 0.5); */
+			border-radius: 4px;
+			width: 5%;
+			&:hover {
+				/* color: rgba($primary-color, 0.8); */
+				background-color: white;
+			}
+		}
+	}
+}
