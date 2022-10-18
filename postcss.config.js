@@ -1,6 +1,5 @@
 module.exports = {
-    syntax: 'postcss-node-sass',
-    plugins: [
-        require('postcss-node-sass')
-    ]
+    syntax: 'postcss-scss',
+    parser: 'postcss-scss',
+    plugins: []
 }
