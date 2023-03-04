@@ -1,0 +1,156 @@
+[tooltip] {
+    & > * {
+        display: inline-block;
+    }
+
+    z-index: 2;
+    position: relative;
+
+    &:before,
+    &:after {
+        text-transform: none;
+        font-size: 0.9em;
+        line-height: 1;
+        user-select: none;
+        pointer-events: none;
+        position: absolute;
+        display: none;
+        opacity: 0;
+    }
+
+    &:before {
+        content: "";
+        border: 5px solid transparent;
+    }
+
+    &:after {
+        content: attr(tooltip);
+        font-family: Helvetica, sans-serif;
+        text-align: center;
+        min-width: 3em;
+        max-width: 21em;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        padding: 0.5rem;
+        border-radius: 0.3rem;
+        box-shadow: 0 1em 2em -0.5em rgba(0, 0, 0, 0.35);
+        @apply bg-primary;
+        color: #fff;
+    }
+
+    &:hover:before,
+    &:hover:after {
+        display: block;
+    }
+
+    &:not([position]):before,
+    &[position^="top"]:before {
+        z-index: 1000;
+        bottom: 100%;
+        border-bottom-width: 0;
+        @apply border-t-4 border-t-primary;
+
+    }
+
+    &:not([position]):after,
+    &[position^="top"]::after {
+        z-index: 1000;
+
+        bottom: calc(100% + 5px);
+    }
+
+    &:not([position])::before,
+    &:not([position])::after,
+    &[position^="top"]::before,
+    &[position^="top"]::after {
+        z-index: 1000;
+        left: 50%;
+        transform: translate(-50%, -0.5em);
+    }
+
+
+    &[position^="bottom"]::before {
+        top: 105%;
+        border-top-width: 0;
+        @apply border-b-4 border-b-primary;
+
+    }
+
+    &[position^="bottom"]::after {
+        top: calc(105% + 5px);
+    }
+
+    &[position^="bottom"]::before,
+    &[position^="bottom"]::after {
+        left: 50%;
+        transform: translate(-50%, 0.5em);
+    }
+
+    &[position^="left"]::before {
+        top: 50%;
+        border-right-width: 0;
+        @apply border-l-4 border-l-primary;
+        left: calc(0em - 5px);
+        transform: translate(-0.5em, -50%);
+    }
+
+    &[position^="left"]::after {
+        top: 50%;
+        right: calc(100% + 5px);
+        transform: translate(-0.5em, -50%);
+    }
+
+
+    &[position^="right"]::before {
+        top: 50%;
+        border-left-width: 0;
+        @apply border-r-4 border-r-primary;
+        right: calc(0em - 5px);
+        transform: translate(0.5em, -50%);
+    }
+
+    &[position^="right"]::after {
+        top: 50%;
+        left: calc(100% + 5px);
+        transform: translate(0.5em, -50%);
+    }
+
+
+    &:not([position]):hover::before,
+    &:not([position]):hover::after,
+    &[position^="top"]:hover::before,
+    &[position^="top"]:hover::after,
+    &[position^="bottom"]:hover::before,
+    &[position^="bottom"]:hover::after {
+        animation: tooltips-vert 300ms ease-out forwards;
+    }
+
+    &[position^="left"]:hover::before,
+    &[position^="left"]:hover::after,
+    &[position^="right"]:hover::before,
+    &[position^="right"]:hover::after {
+        animation: tooltips-horz 300ms ease-out forwards;
+    }
+}
+
+
+[tooltip=""]::before,
+[tooltip=""]::after {
+    display: none !important;
+}
+
+
+@keyframes tooltips-vert {
+    to {
+        opacity: .8;
+        transform: translate(-50%, 0);
+    }
+}
+
+@keyframes tooltips-horz {
+    to {
+        opacity: .8;
+        transform: translate(0, -50%);
+    }
+}

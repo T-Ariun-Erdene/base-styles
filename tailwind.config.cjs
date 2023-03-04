@@ -7,10 +7,22 @@ module.exports = {
         'btn-primary': '0 4px 8px rgba(53, 48, 134, 0.4)',
         'card-primary': '0 4px 4px rgba(0,0,0,0.05)',
       },
+      transitionTimingFunction: {
+        'in-out-quart': 'cubic-bezier(0.77, 0, 0.175, 1)',
+      },
+      fontFamily: {
+        primary: 'Inter',
+      },
+      height: {
+        input: '40px',
+      },
     },
+
     colors: {
       transparent: 'transparent',
-      background: '#F7F8FA',
+      background: '#F8F8FA',
+      'brand-primary': '#e72d52',
+      'brand-secondary': '#003473',
       primary: '#353086',
       secondary: '#33ACB8',
       success: '#0D9488',
@@ -18,7 +30,9 @@ module.exports = {
       info: '#33BFFF',
       warning: '#F4BD50',
       white: '#ffffff',
-      default: '#838383',
+      default: '#181818',
+      body: '#606C80',
+      dark: '#2a2149',
       gray: {
         50: '#EBEEF2',
         100: '#DADEE6',

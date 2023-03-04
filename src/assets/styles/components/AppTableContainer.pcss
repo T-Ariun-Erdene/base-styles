@@ -1,0 +1,43 @@
+.app-table-container {
+    /* Default style*/
+    @apply relative shadow-md overflow-x-auto;
+
+    .table-wrapper, table {
+        @apply w-full text-sm text-left text-gray-500;
+
+        .table-head-wrapper, thead {
+            @apply text-xs text-gray-700 uppercase bg-gray-50;
+
+            .number-col-head {
+                @apply font-bold py-2 px-2 text-center;
+            }
+
+            .default-col-head, th {
+                @apply py-2 px-2 font-bold;
+            }
+        }
+
+        .table-body-wrapper, tbody {
+            .table-body-row, tr {
+                @apply bg-white border-b hover:bg-gray-50;
+
+                .number-col-body {
+                    @apply py-2 px-2 font-medium text-gray-900 whitespace-nowrap text-center;
+                }
+
+                .default-col-body, td {
+                    @apply py-2 px-2 font-medium text-gray-900 whitespace-nowrap;
+                }
+            }
+
+        }
+    }
+
+    /* Featured styles*/
+
+    &.bordered {
+        .default-col-body, td, th {
+            @apply border;
+        }
+    }
+}
