@@ -5,6 +5,7 @@
         display: flex;
         flex-direction: column;
     }
+
     .marker {
         --cb_text-color: #333;
         --cb_bg-color: #f6f8f9;
@@ -12,13 +13,16 @@
         --cb_border-color: #ccc;
         --cb_marker-bg-color: #fff;
     }
+
     .item {
         color: var(--cb_text-color);
         margin: 0 0 0 10px;
     }
+
     .itemInput {
         display: none;
     }
+
     .itemMarker {
         position: relative;
         display: inline-block;
@@ -28,11 +32,13 @@
         transition: all 0.25s ease;
         border-radius: 40%;
     }
+
     .itemLabel {
         display: flex;
         align-items: center;
         padding: 6px;
     }
+
     .shortLine,
     .longLine {
         position: absolute;
@@ -87,22 +93,26 @@
         cursor: default;
         color: var(--cb_border-color);
     }
+
     .marker .itemInput:disabled + .itemLabel + .item {
         border-color: gray;
         color: gray;
         cursor: not-allowed;
     }
+
     .marker .itemInput:disabled + .itemLabel > .itemMarker {
         border-color: gray;
         color: gray;
         cursor: not-allowed;
     }
+
     .marker .itemInput:disabled:checked > .itemMarker .shortLine {
         border-color: gray;
         color: gray;
         cursor: not-allowed;
         background-color: #05c096;
     }
+
     .marker .itemInput:disabled:checked + .itemLabel > .shortLine + .longLine,
     .marker .itemInput:disabled:checked + .itemLabel .itemMarker {
         border-color: var(--cb_border-color);
@@ -112,7 +122,9 @@
     .marker .itemInput:disabled:checked + .itemLabel .longLine::before {
         background-color: transparent;
     }
+
     /* radio box-ийн css  */
+
     input[type='radio'] {
         display: none;
     }
@@ -128,6 +140,7 @@
         display: flex;
         align-items: center;
     }
+
     .radioLabel::before {
         transition: 0.3s;
         content: '';
@@ -140,10 +153,12 @@
         display: flex;
         position: absolute;
     }
+
     .items {
         margin: 0 0 0 30px;
         color: black;
     }
+
     .radioLabel::after {
         transition: 0.3s;
         content: '';
@@ -156,6 +171,7 @@
         left: 28px;
         top: 13px;
     }
+
     input[type='radio']:checked + .radioLabel::before {
         background-color: transparent;
         width: 25px;
@@ -163,17 +179,18 @@
         border-width: 2px;
         margin: 0 0 0 -4.5px;
     }
+
     input[type='radio']:checked + .radioLabel::after {
         width: 15px;
         height: 15px;
     }
 
     .marker .itemInput:checked + .itemLabel .itemMarker {
-        border-color: var(--primary-color);
-        background: var(--primary-color);
+        @apply border border-primary bg-primary;
     }
+
     .marker .itemInput:focus + .itemLabel .itemMarker {
-        border-color: var(--primary-color);
+        @apply border-primary;
     }
 }
 
@@ -181,6 +198,7 @@
     .itemMarker {
         @apply border-2 border-gray-200;
     }
+
     .item {
         @apply text-gray-600 font-semibold text-base leading-5;
     }

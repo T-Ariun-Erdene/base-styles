@@ -1,8 +1,33 @@
 .app-icon-button-container {
-    .label {
-        @apply border w-8 h-8 border-gray-50 rounded-lg flex items-center justify-center shadow-sm hover:shadow transition duration-75;
-    }
+    @apply border w-8 h-8 border-gray-50 rounded-lg shadow-sm hover:shadow-lg transition duration-75
+    bg-white  ;
+
     .icon {
         @apply text-gray-200;
+    }
+
+    &.primary {
+        @apply bg-primary text-white border-primary;
+
+        &:hover {
+            @apply transition ease-in duration-300 shadow-btn-primary;
+        }
+    }
+
+    &.icon-success {
+
+        .icon {
+            @apply text-success;
+        }
+    }
+
+    &.icon-error {
+        .icon {
+            @apply text-error;
+        }
+    }
+
+    &.small {
+        @apply w-6 h-6 rounded-md;
     }
 }

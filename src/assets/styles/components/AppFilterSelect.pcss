@@ -1,0 +1,54 @@
+.app-filter-select {
+    @apply base-input h-input text-default;
+    position: relative;
+    display: inline-block;
+    overflow-y: visible;
+    user-select: none;
+
+    input::-webkit-outer-spin-button,
+    input::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+    }
+
+    input[type='number'] {
+        -moz-appearance: textfield;
+        /* Firefox */
+    }
+
+    > .select {
+        cursor: pointer;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 8px 16px 8px 8px;
+        border-radius: 30px;
+        font-size: 12px;
+        gap: 0.5rem;
+        height: 40px;
+    }
+
+    .label {
+        @apply base-input-placeholder;
+    }
+
+    &.white {
+        @apply bg-white;
+    }
+
+    &.locked {
+        @apply bg-gray-100 hover:bg-gray-200 transition;
+    }
+
+    .content {
+        min-width: 100%;
+        z-index: 20;
+        border-radius: 8px;
+        background-color: #fff;
+        position: absolute;
+        left: 0;
+        top: 42px;
+        padding: 10px;
+        @apply shadow-md;
+    }
+}

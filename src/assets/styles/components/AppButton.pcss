@@ -1,72 +1,95 @@
 .app-button-el {
-	&:hover {
-		cursor: pointer;
-	}
-	&.disabled {
-		@apply opacity-80 cursor-not-allowed;
-	}
+    &:hover {
+        cursor: pointer;
+    }
 
-	&.primary {
-		@apply bg-primary text-white;
-		&:hover {
-			@apply transition ease-in duration-300 shadow-btn-primary;
-		}
-	}
+    &.disabled {
+        @apply opacity-80 cursor-not-allowed;
+    }
 
-	&.secondary {
-		@apply bg-secondary text-white;
-	}
-	&.danger {
-		@apply bg-error text-white;
-	}
-	&.warning {
-		@apply bg-warning text-white;
-	}
+    &.primary {
+        @apply bg-primary text-white;
 
-	&.success {
-		@apply bg-success text-white;
-	}
-	&.info {
-		@apply bg-info text-white;
-	}
+        &:hover {
+            @apply transition ease-in duration-300 shadow-btn-primary;
+        }
+    }
 
-	&.square {
-		@apply rounded-md;
-	}
-	&.outlined {
-		@apply bg-transparent outline outline-1 outline-primary hover:shadow-none;
-		.slot {
-			@apply text-primary font-medium;
-		}
-	}
-	&.block {
-		@apply w-full;
-	}
-	&.textButton {
-		@apply text-black-900 bg-white hover:shadow-none;
-	}
-	.loader {
-		visibility: hidden;
-	}
+    &.secondary {
+        @apply bg-secondary text-white;
+    }
 
-	&.loading {
-		.slot {
-			visibility: hidden;
-		}
-		.loader {
-			visibility: visible;
-		}
-	}
-	@apply text-xs px-6 py-2 rounded-3xl;
-	min-height: 30px;
-	display: inline-block;
-	cursor: pointer;
-	color: #fff;
-	border-radius: 30px;
-	transition: all 0.3s;
-	position: relative;
-	border: none;
-	outline: none;
-	text-decoration: none;
-	text-align: center;
+    &.danger {
+        @apply bg-error text-white;
+    }
+
+    &.warning {
+        @apply bg-warning text-white;
+    }
+
+    &.success {
+        @apply bg-success text-white;
+    }
+
+    &.info {
+        @apply bg-info text-white;
+    }
+
+    &.gray {
+        @apply bg-gray-100 text-black-900;
+    }
+
+    &.square {
+        @apply rounded-md;
+    }
+
+    &.outlined {
+        @apply bg-transparent outline outline-1 outline-primary;
+
+
+        .slot {
+            @apply text-primary font-medium;
+        }
+    }
+
+    &.outlined, &.primary {
+        &:focus {
+            @apply transition ease-in duration-300 shadow-btn-primary;
+        }
+    }
+
+    &.block {
+        @apply w-full;
+    }
+
+    &.textButton {
+        @apply text-black-900 bg-white hover:shadow-none;
+    }
+
+    .loader {
+        visibility: hidden;
+    }
+
+    &.loading {
+        .slot {
+            visibility: hidden;
+        }
+
+        .loader {
+            visibility: visible;
+        }
+    }
+
+    @apply text-xs px-6 py-2 rounded-3xl;
+    min-height: 30px;
+    display: inline-block;
+    cursor: pointer;
+    color: #fff;
+    border-radius: 30px;
+    transition: all 0.3s;
+    position: relative;
+    border: none;
+    outline: none;
+    text-decoration: none;
+    text-align: center;
 }
